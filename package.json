@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-next",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "framer-motion": "^10.12.16",
+    "@react-three/fiber": "^9.0.0",
+    "three": "^0.163.0",
+    "@react-three/drei": "^9.60.1",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.4.7"
+  }
+}

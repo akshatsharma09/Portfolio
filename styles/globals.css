@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --accent: linear-gradient(90deg,#6366f1,#8b5cf6);
+}
+
+html,body,#root{
+  height: 100%;
+}
+
+html{scroll-behavior:smooth}
+
+/* small utility */
+.card-glow{box-shadow:0 6px 20px rgba(139,92,246,0.12)}
+
+/* dark mode handled by .dark class */

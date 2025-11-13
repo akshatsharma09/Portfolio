@@ -1,10 +1,10 @@
-# xyz — Portfolio (Next.js + Tailwind + Framer Motion)
+# Portfolio (Next.js + Tailwind + Framer Motion)
 
-This repository contains a modern, responsive portfolio site for **xyz** (BTech — AI/ML student). It showcases skills in AI/ML, cybersecurity and MERN-stack projects, and is built with Next.js, Tailwind CSS and Framer Motion for smooth UI animations.
+This repository contains a modern, responsive portfolio site built with Next.js, Tailwind CSS, and Framer Motion for smooth UI animations. It showcases skills in various technologies and includes sections for About, Skills, Projects, Experience, and Contact.
 
 Key features
 - Landing / Hero with animated CTA
-- About, Skills, Projects, Experience and Contact sections
+- About, Skills, Projects, Experience, and Contact sections
 - Framer Motion transitions and hover effects
 - Responsive and dark-mode-ready styles (Tailwind)
 - Contact form (Formspree placeholder) and social links (GitHub, LinkedIn, GFG, LeetCode)
@@ -48,7 +48,7 @@ Folder structure (important files)
 ```
 .
 ├─ components/         # React components (Navbar, Hero, Projects, ContactForm...)
-├─ public/             # Static assets (put resume.pdf here)
+├─ app/                # Next.js app directory (page.jsx, layout.jsx, head.jsx)
 ├─ styles/             # Tailwind globals
 ├─ next.config.js
 └─ README.md
@@ -57,7 +57,7 @@ Folder structure (important files)
 Placeholders you should replace
 - `components/ContactForm.jsx` — replace Formspree endpoint: `https://formspree.io/f/{your-id}` with your form ID.
 - `components/ContactForm.jsx` — update social links (GitHub, LinkedIn, GFG, LeetCode) with your usernames.
-- `public/resume.pdf` — add your resume file to enable the Download Resume button.
+- Add a `public/` directory for static assets like `resume.pdf` to enable the Download Resume button.
 
 Deploy to Vercel
 1. Push repo to GitHub.

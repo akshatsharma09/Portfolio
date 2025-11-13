@@ -4,6 +4,7 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Experience from '../components/Experience'
 import ContactForm from '../components/ContactForm'
+import ScrollToTop from '../components/ScrollToTop'
 
 export default function Page() {
   return (
@@ -31,6 +32,8 @@ export default function Page() {
       <section id="contact" className="py-16 px-6 md:px-12">
         <ContactForm />
       </section>
+
+      <ScrollToTop />
     </>
   )
 }

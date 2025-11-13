@@ -3,8 +3,8 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 export const metadata = {
-  title: 'xyz — AI/ML Student | Portfolio',
-  description: 'Portfolio of xyz — AI/ML student specializing in Intelligent Systems, Cybersecurity and MERN stack.'
+  title: 'Portfolio | AI/ML & Web Developer',
+  description: 'Modern portfolio showcasing skills in AI/ML, Cybersecurity, and full-stack web development.'
 }
 
 export default function RootLayout({ children }) {

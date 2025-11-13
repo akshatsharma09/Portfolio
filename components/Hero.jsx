@@ -1,11 +1,22 @@
 "use client"
 import { motion } from 'framer-motion'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, MeshDistortMaterial } from '@react-three/drei'
+
+function Cube() {
+  return (
+    <mesh>
+      <boxGeometry args={[1, 1, 1]} />
+      <MeshDistortMaterial color="#6366f1" distort={0.4} speed={2} />
+    </mesh>
+  )
+}
 
 export default function Hero() {
   return (
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-        <h1 className="text-4xl md:text-5xl font-bold">Hi, I&apos;m xyz <span className="text-3xl">👋</span></h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Hi, I&apos;m Akshat <span className="text-3xl">👋</span></h1>
         <p className="mt-4 text-lg text-slate-200">AI/ML student passionate about building intelligent & secure applications.</p>
 
         <div className="mt-6 flex gap-4">
@@ -14,9 +25,14 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="flex justify-center">
-        <div className="w-72 h-72 rounded-2xl bg-gradient-to-tr from-indigo-700 via-violet-700 to-slate-800 shadow-2xl flex items-center justify-center">
-          <p className="text-center text-sm md:text-base px-4">Subtle 3D / canvas placeholder — replace with React Three Fiber floating model for extra flair.</p>
+      <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.6 }} className="flex justify-center">
+        <div className="w-72 h-72 rounded-2xl bg-gradient-to-tr from-indigo-700 via-violet-700 to-slate-800 shadow-2xl flex items-center justify-center overflow-hidden">
+          <Canvas camera={{ position: [0, 0, 2] }}>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <Cube />
+            <OrbitControls enableZoom={false} enablePan={false} />
+          </Canvas>
         </div>
       </motion.div>
     </div>

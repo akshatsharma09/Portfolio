@@ -6,25 +6,99 @@ export default function About() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <motion.h2 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold">About</motion.h2>
-      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }} className="mt-4 text-slate-200">
-        I’m xyz, a BTech student in Artificial Intelligence and Machine Learning at ABC College, Kanpur. Awarded 3rd position in the first semester and recognized by the college principal. I’ve completed internships at Edunet Foundation (Azure AI Fundamentals) and built real-world projects in cybersecurity and AI.
-      </motion.p>
+    <div className="max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold mb-6"
+          >
+            About Me
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-slate-200 dark:text-slate-300 leading-relaxed mb-6"
+          >
+            I’m Akshat Sharma, a BTech student in Artificial Intelligence and Machine Learning.
+            Awarded 3rd position in the first semester and recognized by the college principal.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-lg text-slate-200 dark:text-slate-300 leading-relaxed mb-8"
+          >
+            I’ve completed internships at Edunet Foundation (Azure AI Fundamentals) and built real-world projects
+            in cybersecurity and AI, combining my passion for technology with practical problem-solving.
+          </motion.p>
 
-      <div className="mt-4">
-        <button onClick={() => setOpen(!open)} className="px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500">{open ? 'Hide' : 'Learn More'}</button>
-        {open && (
-          <div className="mt-3 p-4 bg-white/5 rounded">
-            <h3 className="font-semibold">Interests</h3>
-            <ul className="mt-2 list-disc list-inside text-slate-200">
-              <li>Artificial Intelligence & Machine Learning</li>
-              <li>Cybersecurity</li>
-              <li>Web Development (MERN)</li>
-            </ul>
+          <motion.button
+            onClick={() => setOpen(!open)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium shadow-lg transition-all duration-300"
+          >
+            {open ? 'Hide Details' : 'Learn More'}
+          </motion.button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center"
+        >
+          <div className="relative">
+            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
+              <div className="w-full h-full rounded-full bg-slate-900 dark:bg-slate-800 flex items-center justify-center">
+                <span className="text-6xl">👨‍💻</span>
+              </div>
+            </div>
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              className="absolute -inset-4 rounded-full border-2 border-indigo-500/20"
+            />
           </div>
-        )}
+        </motion.div>
       </div>
+
+      {open && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="mt-12 p-8 bg-white/5 dark:bg-white/5 rounded-xl"
+        >
+          <h3 className="text-2xl font-semibold mb-6 text-center">My Interests & Focus Areas</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: '🤖', title: 'AI & ML', desc: 'Developing intelligent systems and machine learning models' },
+              { icon: '🔒', title: 'Cybersecurity', desc: 'Securing digital assets and preventing cyber threats' },
+              { icon: '💻', title: 'Web Development', desc: 'Building modern, responsive web applications' }
+            ].map((interest, index) => (
+              <motion.div
+                key={interest.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center p-4 rounded-lg bg-white/5 dark:bg-white/5"
+              >
+                <div className="text-4xl mb-3">{interest.icon}</div>
+                <h4 className="font-semibold text-lg mb-2">{interest.title}</h4>
+                <p className="text-slate-300 dark:text-slate-400 text-sm">{interest.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </div>
   )
 }

@@ -58,14 +58,14 @@ const itemVariants = {
 export default function Skills() {
   return (
     <div className="max-w-6xl mx-auto">
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold text-center mb-12">Skills</motion.h2>
+      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold text-center mb-16">Skills</motion.h2>
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((g, idx) => (
           <motion.div
             key={g.title}
             variants={itemVariants}
             whileHover={{ y: -8, scale: 1.03 }}
-            className="relative p-6 bg-white/5 dark:bg-white/5 rounded-xl shadow-lg overflow-hidden group"
+            className="relative p-6 bg-secondary-50 border border-secondary-200 rounded-xl shadow-lg overflow-hidden group"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${g.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
             <div className="relative z-10">
@@ -83,7 +83,7 @@ export default function Skills() {
                     className="flex items-center gap-2"
                   >
                     <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${g.color}`} />
-                    <span className="text-slate-200 dark:text-slate-300">{item}</span>
+                    <span className="text-secondary-700">{item}</span>
                   </motion.div>
                 ))}
               </div>

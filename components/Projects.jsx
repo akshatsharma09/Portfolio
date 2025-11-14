@@ -10,15 +10,15 @@ const projects = [
     links: { github: '#', demo: '#' }
   },
   {
-    title: 'Vulnerability Scanner (Code for Bharat)',
-    desc: 'Team project to detect security loopholes in web systems; scanning and reporting tool.',
-    tech: 'Node.js, Express, Puppeteer',
+    title: 'Flappy Bird AI',
+    desc: 'AI-powered Flappy Bird game using reinforcement learning and neural networks for autonomous gameplay.',
+    tech: 'Python, TensorFlow, Pygame',
     links: { github: '#', demo: '#' }
   },
   {
-    title: 'AI Phishing Detection',
-    desc: 'ML classifier to detect phishing URLs using feature engineering and ensemble models.',
-    tech: 'Python, scikit-learn, Flask',
+    title: 'Skill-Link AI',
+    desc: 'AI-driven platform connecting freelancers with projects based on skill matching and recommendation algorithms.',
+    tech: 'React, Node.js, MongoDB, Machine Learning',
     links: { github: '#', demo: '#' }
   }
 ]
@@ -36,7 +36,7 @@ const containerVariants = {
 export default function Projects() {
   return (
     <div className="max-w-6xl mx-auto">
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold">Projects</motion.h2>
+      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold text-black dark:text-white">Projects</motion.h2>
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         {projects.map(p => <ProjectCard key={p.title} {...p} />)}
       </motion.div>

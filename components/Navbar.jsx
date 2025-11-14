@@ -5,89 +5,123 @@ import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact']
+      const scrollPosition = window.scrollY + 100
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setDarkMode(true)
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section)
+            break
+          }
+        }
+      }
     }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
-  }, [darkMode])
+    setOpen(false)
+  }
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'contact', label: 'Contact' }
+  ]
 
   return (
-    <header className="w-full sticky top-0 z-50 backdrop-blur bg-black/30 dark:bg-white/10">
+    <header className="w-full sticky top-0 z-50 glass shadow-xl border-b border-secondary-200/50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="#home" className="text-2xl font-semibold">xyz.dev</Link>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link href="#home" className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent hover:from-primary-700 hover:to-accent-700 transition-all duration-300">
+            Akshat.dev
+          </Link>
+        </motion.div>
 
-        <nav className="hidden md:flex gap-6 items-center">
-          <a href="#home" className="hover:underline transition-colors">Home</a>
-          <a href="#about" className="hover:underline transition-colors">About</a>
-          <a href="#skills" className="hover:underline transition-colors">Skills</a>
-          <a href="#projects" className="hover:underline transition-colors">Projects</a>
-          <a href="#experience" className="hover:underline transition-colors">Experience</a>
-          <a href="#contact" className="hover:underline transition-colors">Contact</a>
-          <div className="ml-4 relative">
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="relative w-14 h-7 bg-white/10 dark:bg-black/20 rounded-full p-1 transition-colors duration-300"
+        <nav className="hidden md:flex gap-8 items-center">
+          {navItems.map((item) => (
+            <motion.button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`relative px-3 py-2 rounded-lg font-medium transition-all duration-300 ${
+                activeSection === item.id
+                  ? 'text-primary-700 bg-primary-100 shadow-lg'
+                  : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
+              }`}
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
             >
-              <motion.div
-                className="w-5 h-5 bg-white rounded-full shadow-md"
-                layout
-                transition={{ type: 'spring', stiffness: 700, damping: 30 }}
-                style={{ x: darkMode ? 24 : 0 }}
-              />
-            </button>
-            <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs opacity-0 hover:opacity-100 transition-opacity">
-              {darkMode ? 'Light' : 'Dark'}
-            </span>
-          </div>
+              {item.label}
+              {activeSection === item.id && (
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
+                  layoutId="activeTab"
+                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                />
+              )}
+            </motion.button>
+          ))}
         </nav>
 
-        <div className="md:hidden flex items-center gap-2">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="relative w-12 h-6 bg-white/10 dark:bg-black/20 rounded-full p-0.5 transition-colors duration-300"
+        <div className="md:hidden">
+          <motion.button
+            onClick={() => setOpen(!open)}
+            aria-label="menu"
+            className="px-3 py-2 rounded-lg bg-primary-50 hover:bg-primary-100 transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <motion.div
-              className="w-5 h-5 bg-white rounded-full shadow-md"
-              layout
-              transition={{ type: 'spring', stiffness: 700, damping: 30 }}
-              style={{ x: darkMode ? 18 : 0 }}
-            />
-          </button>
-          <button onClick={() => setOpen(!open)} aria-label="menu" className="px-3 py-2 rounded bg-white/5 dark:bg-black/10">
             {open ? '✕' : '☰'}
-          </button>
+          </motion.button>
         </div>
       </div>
 
       {open && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-black/60 dark:bg-white/10 backdrop-blur"
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -20, scale: 0.95 }}
+          transition={{ duration: 0.2 }}
+          className="md:hidden bg-white/95 backdrop-blur-lg border-t border-secondary-200/50"
         >
-          <div className="flex flex-col gap-3 px-6 py-4">
-            <a href="#home" onClick={() => setOpen(false)} className="hover:underline transition-colors">Home</a>
-            <a href="#about" onClick={() => setOpen(false)} className="hover:underline transition-colors">About</a>
-            <a href="#skills" onClick={() => setOpen(false)} className="hover:underline transition-colors">Skills</a>
-            <a href="#projects" onClick={() => setOpen(false)} className="hover:underline transition-colors">Projects</a>
-            <a href="#experience" onClick={() => setOpen(false)} className="hover:underline transition-colors">Experience</a>
-            <a href="#contact" onClick={() => setOpen(false)} className="hover:underline transition-colors">Contact</a>
+          <div className="flex flex-col gap-2 px-6 py-6">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeSection === item.id
+                    ? 'text-primary-700 bg-primary-100 shadow-lg'
+                    : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
+                }`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ x: 5 }}
+                whileTap={{ x: 0 }}
+              >
+                {item.label}
+              </motion.button>
+            ))}
           </div>
         </motion.div>
       )}

@@ -9,27 +9,27 @@ import ScrollToTop from '../components/ScrollToTop'
 export default function Page() {
   return (
     <>
-      <section id="home" className="py-20 px-6 md:px-12">
+      <section id="home" className="min-h-screen flex items-center py-28 px-6 md:px-12">
         <Hero />
       </section>
 
-      <section id="about" className="py-16 px-6 md:px-12">
+      <section id="about" className="min-h-screen flex items-center py-28 px-6 md:px-12">
         <About />
       </section>
 
-      <section id="skills" className="py-16 px-6 md:px-12">
+      <section id="skills" className="min-h-screen flex items-center py-28 px-6 md:px-12">
         <Skills />
       </section>
 
-      <section id="projects" className="py-16 px-6 md:px-12">
+      <section id="projects" className="min-h-screen flex items-center py-28 px-6 md:px-12">
         <Projects />
       </section>
 
-      <section id="experience" className="py-16 px-6 md:px-12">
+      <section id="experience" className="min-h-screen flex items-center py-28 px-6 md:px-12">
         <Experience />
       </section>
 
-      <section id="contact" className="py-16 px-6 md:px-12">
+      <section id="contact" className="min-h-screen flex items-center py-28 px-6 md:px-12">
         <ContactForm />
       </section>
 

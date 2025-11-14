@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 text-slate-100 antialiased">
+      <body className="bg-gradient-to-br from-blue-50 via-white to-blue-50 text-secondary-900 antialiased">
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>

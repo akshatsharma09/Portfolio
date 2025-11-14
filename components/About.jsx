@@ -16,7 +16,7 @@ export default function About() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold mb-6"
+            className="text-4xl font-bold mb-8"
           >
             About Me
           </motion.h2>
@@ -24,7 +24,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-slate-200 dark:text-slate-300 leading-relaxed mb-6"
+            className="text-lg text-secondary-700 leading-relaxed mb-6"
           >
             I’m Akshat Sharma, a BTech student in Artificial Intelligence and Machine Learning.
             Awarded 3rd position in the first semester and recognized by the college principal.
@@ -33,7 +33,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-slate-200 dark:text-slate-300 leading-relaxed mb-8"
+            className="text-lg text-secondary-700 leading-relaxed mb-8"
           >
             I’ve completed internships at Edunet Foundation (Azure AI Fundamentals) and built real-world projects
             in cybersecurity and AI, combining my passion for technology with practical problem-solving.
@@ -43,7 +43,7 @@ export default function About() {
             onClick={() => setOpen(!open)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium shadow-lg transition-all duration-300"
+            className="px-6 py-3 rounded-lg bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white font-medium shadow-lg transition-all duration-300"
           >
             {open ? 'Hide Details' : 'Learn More'}
           </motion.button>
@@ -56,15 +56,15 @@ export default function About() {
           className="flex justify-center"
         >
           <div className="relative">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
-              <div className="w-full h-full rounded-full bg-slate-900 dark:bg-slate-800 flex items-center justify-center">
-                <span className="text-6xl">👨‍💻</span>
+            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary-100 via-accent-100 to-primary-200 p-1">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                <span className="text-6xl">A</span>
               </div>
             </div>
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute -inset-4 rounded-full border-2 border-indigo-500/20"
+              className="absolute -inset-4 rounded-full border-2 border-primary-200/50"
             />
           </div>
         </motion.div>
@@ -75,9 +75,9 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="mt-12 p-8 bg-white/5 dark:bg-white/5 rounded-xl"
+          className="mt-12 p-8 bg-secondary-50 border border-secondary-200 rounded-xl"
         >
-          <h3 className="text-2xl font-semibold mb-6 text-center">My Interests & Focus Areas</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-center text-secondary-800">My Interests & Focus Areas</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: '🤖', title: 'AI & ML', desc: 'Developing intelligent systems and machine learning models' },
@@ -89,11 +89,11 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-4 rounded-lg bg-white/5 dark:bg-white/5"
+                className="text-center p-4 rounded-lg bg-secondary-50 border border-secondary-200"
               >
                 <div className="text-4xl mb-3">{interest.icon}</div>
-                <h4 className="font-semibold text-lg mb-2">{interest.title}</h4>
-                <p className="text-slate-300 dark:text-slate-400 text-sm">{interest.desc}</p>
+                <h4 className="font-semibold text-lg mb-2 text-secondary-800">{interest.title}</h4>
+                <p className="text-secondary-600 text-sm">{interest.desc}</p>
               </motion.div>
             ))}
           </div>

@@ -49,7 +49,7 @@ export default function Experience() {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl font-bold text-center mb-12"
+        className="text-3xl font-bold text-center mb-16 text-black dark:text-white"
       >
         Experience & Achievements
       </motion.h2>
@@ -85,14 +85,14 @@ export default function Experience() {
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold">{exp.title}</h3>
-                  <p className="text-indigo-400 dark:text-indigo-300 font-medium">{exp.subtitle}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.title}</h3>
+                  <p className="text-indigo-600 dark:text-indigo-300 font-medium">{exp.subtitle}</p>
                 </div>
-                <span className="text-sm text-slate-400 dark:text-slate-500 mt-2 md:mt-0 px-3 py-1 bg-white/10 dark:bg-black/20 rounded-full">
+                <span className="text-sm text-slate-600 dark:text-slate-400 mt-2 md:mt-0 px-3 py-1 bg-white/10 dark:bg-black/20 rounded-full">
                   {exp.period}
                 </span>
               </div>
-              <p className="text-slate-200 dark:text-slate-300 leading-relaxed">{exp.description}</p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{exp.description}</p>
             </motion.div>
           </motion.div>
         ))}

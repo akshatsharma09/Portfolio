@@ -1,6 +1,6 @@
+
 import '../styles/globals.css'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import ClientLayout from '../components/ClientLayout'
 
 export const metadata = {
   title: 'Portfolio | AI/ML & Web Developer',
@@ -10,12 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-blue-50 via-white to-blue-50 text-secondary-900 antialiased">
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+      <body className="bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:bg-gradient-to-br dark:from-navy-900 dark:via-darkblue-900 dark:to-navy-800 text-secondary-900 dark:text-white antialiased transition-colors duration-500">
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   )

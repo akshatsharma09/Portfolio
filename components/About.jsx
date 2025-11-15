@@ -6,7 +6,7 @@ export default function About() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto transition-colors duration-500">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -16,7 +16,7 @@ export default function About() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold mb-8"
+            className="text-4xl font-bold mb-8 text-secondary-900 dark:text-white transition-colors duration-500"
           >
             About Me
           </motion.h2>
@@ -24,7 +24,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-secondary-700 leading-relaxed mb-6"
+            className="text-lg text-secondary-700 dark:text-navy-100 leading-relaxed mb-6 transition-colors duration-500"
           >
             I’m Akshat Sharma, a BTech student in Artificial Intelligence and Machine Learning.
             Awarded 3rd position in the first semester and recognized by the college principal.
@@ -33,7 +33,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-secondary-700 leading-relaxed mb-8"
+            className="text-lg text-secondary-700 dark:text-navy-100 leading-relaxed mb-8 transition-colors duration-500"
           >
             I’ve completed internships at Edunet Foundation (Azure AI Fundamentals) and built real-world projects
             in cybersecurity and AI, combining my passion for technology with practical problem-solving.
@@ -56,15 +56,15 @@ export default function About() {
           className="flex justify-center"
         >
           <div className="relative">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary-100 via-accent-100 to-primary-200 p-1">
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                <span className="text-6xl">A</span>
+            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary-100 via-accent-100 to-primary-200 dark:from-navy-900 dark:via-darkblue-900 dark:to-navy-800 p-1 transition-colors duration-500">
+              <div className="w-full h-full rounded-full bg-white dark:bg-navy-900 flex items-center justify-center transition-colors duration-500">
+                <span className="text-6xl text-primary-600 dark:text-white">A</span>
               </div>
             </div>
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute -inset-4 rounded-full border-2 border-primary-200/50"
+              className="absolute -inset-4 rounded-full border-2 border-primary-200/50 dark:border-navy-700 transition-colors duration-500"
             />
           </div>
         </motion.div>
@@ -75,9 +75,9 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="mt-12 p-8 bg-secondary-50 border border-secondary-200 rounded-xl"
+          className="mt-12 p-8 bg-secondary-50 dark:bg-navy-800 border border-secondary-200 dark:border-navy-700 rounded-xl transition-colors duration-500"
         >
-          <h3 className="text-2xl font-semibold mb-6 text-center text-secondary-800">My Interests & Focus Areas</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-center text-secondary-800 dark:text-white transition-colors duration-500">My Interests & Focus Areas</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: '🤖', title: 'AI & ML', desc: 'Developing intelligent systems and machine learning models' },
@@ -89,11 +89,11 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-4 rounded-lg bg-secondary-50 border border-secondary-200"
+                className="text-center p-4 rounded-lg bg-secondary-50 dark:bg-navy-900 border border-secondary-200 dark:border-navy-700 transition-colors duration-500"
               >
                 <div className="text-4xl mb-3">{interest.icon}</div>
-                <h4 className="font-semibold text-lg mb-2 text-secondary-800">{interest.title}</h4>
-                <p className="text-secondary-600 text-sm">{interest.desc}</p>
+                <h4 className="font-semibold text-lg mb-2 text-secondary-800 dark:text-white transition-colors duration-500">{interest.title}</h4>
+                <p className="text-secondary-600 dark:text-navy-100 text-sm transition-colors duration-500">{interest.desc}</p>
               </motion.div>
             ))}
           </div>

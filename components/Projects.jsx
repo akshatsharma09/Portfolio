@@ -35,8 +35,16 @@ const containerVariants = {
 
 export default function Projects() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold text-black dark:text-white">Projects</motion.h2>
+    <div className="max-w-6xl mx-auto transition-colors duration-500">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-3xl font-bold text-center mb-6 px-2 text-secondary-900 dark:text-white transition-colors duration-500"
+      >
+        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-slate-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
+          Projects
+        </span>
+      </motion.h2>
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         {projects.map(p => <ProjectCard key={p.title} {...p} />)}
       </motion.div>

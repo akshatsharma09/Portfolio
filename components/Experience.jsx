@@ -45,13 +45,15 @@ const itemVariants = {
 
 export default function Experience() {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto transition-colors duration-500">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl font-bold text-center mb-16 text-black dark:text-white"
+        className="text-3xl font-bold text-center mb-16 relative z-20 px-2 text-secondary-900 dark:text-white transition-colors duration-500"
       >
-        Experience & Achievements
+        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-slate-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
+          Experience & Achievements
+        </span>
       </motion.h2>
 
       <motion.div
@@ -81,18 +83,18 @@ export default function Experience() {
             {/* Content */}
             <motion.div
               whileHover={{ x: 10 }}
-              className="ml-6 flex-1 bg-white/5 dark:bg-white/5 rounded-xl p-6 shadow-lg"
+              className="ml-6 flex-1 glass dark:bg-navy-800/70 rounded-xl p-6 shadow-lg transition-colors duration-500"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.title}</h3>
-                  <p className="text-indigo-600 dark:text-indigo-300 font-medium">{exp.subtitle}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors duration-500">{exp.title}</h3>
+                  <p className="text-indigo-600 dark:text-indigo-300 font-medium transition-colors duration-500">{exp.subtitle}</p>
                 </div>
-                <span className="text-sm text-slate-600 dark:text-slate-400 mt-2 md:mt-0 px-3 py-1 bg-white/10 dark:bg-black/20 rounded-full">
+                <span className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:mt-0 px-3 py-1 bg-white/10 dark:bg-navy-900/20 rounded-full transition-colors duration-500">
                   {exp.period}
                 </span>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{exp.description}</p>
+              <p className="text-gray-700 dark:text-gray-200 leading-relaxed transition-colors duration-500">{exp.description}</p>
             </motion.div>
           </motion.div>
         ))}

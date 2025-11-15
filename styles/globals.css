@@ -7,6 +7,20 @@
 
 :root{
   --bg-light: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f0f9ff 100%);
+  --text-primary: #0f172a; /* slate-900 */
+  --text-secondary: #475569; /* slate-600 / secondary */
+  --text-muted: #64748b; /* muted */
+  --link: #3b82f6; /* primary-500 */
+  --card-bg: rgba(255,255,255,0.95);
+}
+
+/* Dark mode variables (applied when `.dark` class is on html/documentElement) */
+.dark {
+  --text-primary: #e6eef8; /* near-white for high contrast */
+  --text-secondary: #cbd5e1; /* lighter secondary */
+  --text-muted: #94a3b8;
+  --link: #60a5fa; /* lighter primary for links */
+  --card-bg: rgba(15,23,42,0.72);
 }
 
 html,body,#root{
@@ -22,6 +36,26 @@ html{
 body {
   background: var(--bg-light);
   background-attachment: fixed;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global semantic text color rules so components without specific utility classes inherit good contrast */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p, li, span, label, input, textarea, a {
+  color: var(--text-primary);
+}
+
+a, a:visited {
+  color: var(--link);
+}
+
+a:hover {
+  opacity: 0.92;
 }
 
 /* Section backgrounds */
@@ -50,12 +84,12 @@ code, pre {
 
 /* Enhanced card glow */
 .card-glow{
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 10px 40px rgba(2,6,23,0.08);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .card-glow:hover {
-  box-shadow: 0 12px 48px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 18px 64px rgba(2,6,23,0.12);
 }
 
 /* Custom scrollbar */
@@ -76,6 +110,15 @@ code, pre {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #2563eb, #059669);
+}
+
+/* Dark mode scrollbar tweaks */
+.dark ::-webkit-scrollbar-track {
+  background: rgba(10, 12, 15, 0.35);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #375ddf, #0ea371);
 }
 
 /* Animation utilities */
@@ -99,7 +142,15 @@ code, pre {
 
 /* Glassmorphism effect */
 .glass {
-  backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px) saturate(140%);
+  background-color: var(--card-bg, rgba(255,255,255,0.96));
+  border: 1px solid rgba(2,6,23,0.04);
+  color: var(--text-primary);
+}
+
+/* Dark mode glass uses the same variable overrides defined above */
+.dark .glass {
+  backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
 }

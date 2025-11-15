@@ -4,20 +4,20 @@ import { motion } from 'framer-motion'
 export default function ProjectCard({ title, desc, tech, links }) {
   return (
     <motion.div
-      className="glass rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 card-glow animate-float"
+      className="glass bg-white/95 dark:bg-gray-800/75 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 card-glow animate-float"
       whileHover={{ y: -10, scale: 1.02 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <motion.h3
-        className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
-        whileHover={{ scale: 1.05 }}
+        className="text-2xl font-bold mb-4 text-slate-800 dark:text-white"
+        whileHover={{ scale: 1.03 }}
       >
         {title}
       </motion.h3>
       <motion.p
-        className="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed"
+        className="text-gray-700 dark:text-gray-200 mb-6 text-lg leading-relaxed"
         whileHover={{ scale: 1.01 }}
       >
         {desc}
@@ -31,7 +31,7 @@ export default function ProjectCard({ title, desc, tech, links }) {
         {tech.split(', ').map((t, index) => (
           <motion.span
             key={t}
-            className="bg-gradient-to-r from-primary-500/20 to-accent-500/20 text-primary-600 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium border border-primary-500/30"
+            className="bg-gradient-to-r from-primary-500/30 to-accent-500/30 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium border border-primary-500/30"
             whileHover={{ scale: 1.1, backgroundColor: 'rgba(14, 165, 233, 0.3)' }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

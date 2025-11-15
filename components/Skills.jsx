@@ -57,15 +57,23 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold text-center mb-16">Skills</motion.h2>
+    <div className="max-w-6xl mx-auto transition-colors duration-500">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-3xl font-bold text-center mb-16 px-2 text-secondary-900 dark:text-white transition-colors duration-500"
+      >
+        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-slate-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
+          Skills
+        </span>
+      </motion.h2>
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((g, idx) => (
           <motion.div
             key={g.title}
             variants={itemVariants}
             whileHover={{ y: -8, scale: 1.03 }}
-            className="relative p-6 bg-secondary-50 border border-secondary-200 rounded-xl shadow-lg overflow-hidden group"
+            className="relative p-6 bg-secondary-50 dark:bg-navy-900 border border-secondary-200 dark:border-navy-700 rounded-xl shadow-lg overflow-hidden group transition-colors duration-500"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${g.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
             <div className="relative z-10">
@@ -83,7 +91,7 @@ export default function Skills() {
                     className="flex items-center gap-2"
                   >
                     <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${g.color}`} />
-                    <span className="text-secondary-700">{item}</span>
+                    <span className="text-secondary-700 dark:text-gray-200 transition-colors duration-500">{item}</span>
                   </motion.div>
                 ))}
               </div>

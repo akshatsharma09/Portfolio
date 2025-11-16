@@ -106,7 +106,7 @@ npm install @splinetool/react-spline
 
 If you want to reach out:
 
-* **Email:** [your-email@example.com](mailto:your-email@example.com)
+* **Email:** (mailto:your-akshats070205@gmail.com)
 * **LinkedIn:** (https://www.linkedin.com/in/akshat-sharma-2433b1274?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium)
 * **Portfolio:** your deployed link here
 

@@ -1,77 +1,121 @@
-# Portfolio (Next.js + Tailwind + Framer Motion)
+# Portfolio Website
 
-This repository contains a modern, responsive portfolio site built with Next.js, Tailwind CSS, and Framer Motion for smooth UI animations. It showcases skills in various technologies and includes sections for About, Skills, Projects, Experience, and Contact.
+A modern, responsive portfolio website built using **Next.js**, **Tailwind CSS**, and animated with **GSAP**, **Framer Motion**, and **Three.js** for interactive 3D experiences. This portfolio highlights my projects, skills, achievements, and work experience in a clean and visually engaging manner.
 
-## Key Features
-- Landing / Hero with animated CTA
-- About, Skills, Projects, Experience, and Contact sections
-- Framer Motion transitions and hover effects
-- Responsive design with light theme
-- Contact form and social links (GitHub, LinkedIn, GFG, LeetCode)
+---
 
-## Tech Stack
-- Next.js (App Router)
-- React + Framer Motion
-- Tailwind CSS
+## 🚀 Features
 
-## Quick Start (Windows PowerShell)
+* **Fully Responsive UI** for all devices
+* **Smooth Animations** using Framer Motion & GSAP
+* **3D Components & Scenes** integrated via Three.js/Spline
+* **Dynamic Sections** including About, Skills, Experience, Projects & Contact
+* **Optimized Images and Code Splitting** for performance
+* **Modern UI Design** inspired by premium portfolios
 
-1. From the repository root install dependencies:
+---
 
-```powershell
-cd 'C:\Users\DELL\OneDrive\Desktop\portfolio'
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js, React.js, Tailwind CSS
+* **Animations:** GSAP, Framer Motion
+* **3D Elements:** Three.js / Spline Runtime
+* **Icons:** Lucide React, React Icons
+* **Deployment:** GitHub Pages
+
+---
+
+## 📂 Folder Structure (Important Files)
+
+```
+📦 portfolio
+├── 📁 components
+│   ├── Hero.jsx
+│   ├── Navbar.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   ├── Contact.jsx
+│   └── ...more
+├── 📁 public
+│   ├── images
+│   └── assets
+├── 📁 styles
+├── package.json
+└── README.md
+```
+
+---
+
+## 📸 Preview
+
+*Add a screenshot or link to a live demo here*
+
+---
+
+## 🔧 Installation & Setup (GitHub Pages Compatible)
+
+Clone this repository:
+
+```bash
+https://github.com/akshatsharma09/Portfolio.git
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-2. Start the dev server
+Run the development server:
 
-```powershell
+```bash
 npm run dev
 ```
 
-3. Open http://localhost:3000 in your browser. To open from PowerShell:
+Build for production:
 
-```powershell
-Start-Process 'http://localhost:3000'
-```
-
-## Build for Production
-
-```powershell
+```bash
 npm run build
 npm start
 ```
 
-## Folder Structure (Important Files)
+---
+
+## 🧩 3D Model Integration
+
+This portfolio uses **Spline / Three.js** for 3D models. Make sure you:
+
+* Install `@splinetool/react-spline`
+* Import components correctly inside your Hero or Sections
 
 ```
-.
-├─ components/         # React components (Navbar, Hero, Projects, ContactForm...)
-├─ app/                # Next.js app directory (page.jsx, layout.jsx, head.jsx)
-├─ styles/             # Tailwind globals
-├─ next.config.js
-└─ README.md
+npm install @splinetool/react-spline
 ```
 
-## Placeholders to Replace
-- `components/ContactForm.jsx` — replace Formspree endpoint: `https://formspree.io/f/{your-id}` with your form ID.
-- `components/ContactForm.jsx` — update social links (GitHub, LinkedIn, GFG, LeetCode) with your usernames.
-- Add a `public/` directory for static assets like `resume.pdf` to enable the Download Resume button.
+---
 
-## Deploy to Vercel
-1. Push repo to GitHub.
-2. Create a new project in Vercel and connect your repository. Vercel should auto-detect this as a Next.js app. If your app is in a subfolder, set the Project Root accordingly.
-3. (Optional) Set environment variables in Vercel if you add any (not required for the current scaffold).
+## ✨ Highlights
 
-## Customization / Next Steps
-- Add project screenshots in `public/images` and use `<Image />` from `next/image`.
-- Improve SEO: add Open Graph images and more metadata in `app/head.jsx`.
+* Showcases **AI/ML projects**, **Cybersecurity tools**, and **3D interactive work**
+* Clean code structure for maintainability
+* Fast, SEO-optimized, developer-friendly
 
-## Contact & Socials (Update These to Your Real Profiles)
-- GitHub: https://github.com/xyz
-- LinkedIn: https://www.linkedin.com/in/xyz
-- GeeksforGeeks: https://auth.geeksforgeeks.org/user/xyz/profile
-- LeetCode: https://leetcode.com/xyz
+---
 
-## License
-This scaffold is provided as-is. Add a LICENSE file if you want an explicit license.
+## 📬 Contact
+
+If you want to reach out:
+
+* **Email:** [your-email@example.com](mailto:your-email@example.com)
+* **LinkedIn:** [https://linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+* **Portfolio:** your deployed link here
+
+---
+
+## 📝 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+### ⭐ If you like this portfolio, feel free to star the repository!

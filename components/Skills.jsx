@@ -1,43 +1,25 @@
 "use client"
 import { motion } from 'framer-motion'
+import SkillCard from './SkillCard'
 
-const groups = [
-  {
-    title: 'Languages',
-    icon: '💻',
-    items: ['Python', 'JavaScript', 'C++'],
-    color: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'Frameworks',
-    icon: '⚛️',
-    items: ['React.js', 'Next.js', 'Node.js', 'Express.js'],
-    color: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'AI/ML',
-    icon: '🤖',
-    items: ['TensorFlow', 'scikit-learn', 'OpenCV'],
-    color: 'from-purple-500 to-pink-500'
-  },
-  {
-    title: 'Cybersecurity',
-    icon: '🔒',
-    items: ['Wireshark', 'Burp Suite'],
-    color: 'from-red-500 to-orange-500'
-  },
-  {
-    title: 'Databases',
-    icon: '🗄️',
-    items: ['MongoDB', 'MySQL'],
-    color: 'from-yellow-500 to-amber-500'
-  },
-  {
-    title: 'Other',
-    icon: '🛠️',
-    items: ['Git', 'GitHub', 'Azure AI', 'APIs'],
-    color: 'from-indigo-500 to-blue-500'
-  }
+const skills = [
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: 'Languages', color: 'from-blue-500 to-cyan-500' },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', category: 'Languages', color: 'from-blue-500 to-cyan-500' },
+  { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', category: 'Languages', color: 'from-blue-500 to-cyan-500' },
+  { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', category: 'Languages', color: 'from-blue-500 to-cyan-500' },
+  { name: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'Frameworks', color: 'from-green-500 to-emerald-500' },
+  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: 'Frameworks', color: 'from-green-500 to-emerald-500' },
+  { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', category: 'Frameworks', color: 'from-green-500 to-emerald-500' },
+  { name: 'TensorFlow', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', category: 'AI/ML', color: 'from-purple-500 to-pink-500' },
+  { name: 'scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg', category: 'AI/ML', color: 'from-purple-500 to-pink-500' },
+  { name: 'OpenCV', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg', category: 'AI/ML', color: 'from-purple-500 to-pink-500' },
+
+  { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: 'Databases', color: 'from-yellow-500 to-amber-500' },
+  { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', category: 'Databases', color: 'from-yellow-500 to-amber-500' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: 'Other', color: 'from-indigo-500 to-blue-500' },
+  { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', category: 'Other', color: 'from-indigo-500 to-blue-500' },
+  { name: 'Azure AI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg', category: 'Other', color: 'from-indigo-500 to-blue-500' },
+  { name: 'APIs', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg', category: 'Other', color: 'from-indigo-500 to-blue-500' }
 ]
 
 const containerVariants = {
@@ -45,14 +27,9 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.2
     }
   }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
 }
 
 export default function Skills() {
@@ -61,43 +38,14 @@ export default function Skills() {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl font-bold text-center mb-16 px-2 text-secondary-900 dark:text-white transition-colors duration-500"
+        className="text-3xl font-bold text-center mb-6 px-2 text-secondary-900 dark:text-white transition-colors duration-500"
       >
-        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-slate-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
+        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-secondary-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
           Skills
         </span>
       </motion.h2>
-      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {groups.map((g, idx) => (
-          <motion.div
-            key={g.title}
-            variants={itemVariants}
-            whileHover={{ y: -8, scale: 1.03 }}
-            className="relative p-6 bg-secondary-50 dark:bg-navy-900 border border-secondary-200 dark:border-navy-700 rounded-xl shadow-lg overflow-hidden group transition-colors duration-500"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-br ${g.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">{g.icon}</span>
-                <h3 className="font-semibold text-xl">{g.title}</h3>
-              </div>
-              <div className="space-y-2">
-                {g.items.map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.1 + index * 0.05 }}
-                    className="flex items-center gap-2"
-                  >
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${g.color}`} />
-                    <span className="text-secondary-700 dark:text-gray-200 transition-colors duration-500">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        ))}
+      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-6 flex flex-row flex-wrap gap-6 justify-center">
+        {skills.map(s => <SkillCard key={s.name} {...s} />)}
       </motion.div>
     </div>
   )

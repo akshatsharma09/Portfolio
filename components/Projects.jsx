@@ -7,19 +7,19 @@ const projects = [
     title: 'Sign Language Detection System',
     desc: 'A computer vision & deep learning system to interpret sign gestures into text/speech.',
     tech: 'Python, OpenCV, TensorFlow',
-    links: { github: '#', demo: '#' }
+    links: { github: 'https://github.com/akshatsharma09/Sign_Language_Detection', demo: '#' }
   },
   {
-    title: 'Flappy Bird AI',
-    desc: 'AI-powered Flappy Bird game using reinforcement learning and neural networks for autonomous gameplay.',
+    title: 'Flappy Bird',
+    desc: 'Developed a Flappy Bird game in Python using PyGame with a clean OOP-based structure. Implemented real-time collision detection and a smooth 60+ FPS gameplay loop. Showcased strong skills in graphics programming and event-driven logic.',
     tech: 'Python, TensorFlow, Pygame',
-    links: { github: '#', demo: '#' }
+    links: { github: 'https://github.com/akshatsharma09/Flappy-Bird', demo: '#' }
   },
   {
     title: 'Skill-Link AI',
     desc: 'AI-driven platform connecting freelancers with projects based on skill matching and recommendation algorithms.',
     tech: 'React, Node.js, MongoDB, Machine Learning',
-    links: { github: '#', demo: '#' }
+    links: { github: 'https://github.com/akshatsharma09/Skill_Link-AI', demo: '#' }
   }
 ]
 
@@ -41,7 +41,7 @@ export default function Projects() {
         animate={{ opacity: 1, y: 0 }}
         className="text-3xl font-bold text-center mb-6 px-2 text-secondary-900 dark:text-white transition-colors duration-500"
       >
-        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-slate-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
+        <span className="inline-block bg-white/95 dark:bg-navy-900/75 text-secondary-900 dark:text-white px-4 py-2 rounded-md shadow-sm transition-colors duration-500">
           Projects
         </span>
       </motion.h2>

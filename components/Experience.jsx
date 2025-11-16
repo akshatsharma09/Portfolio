@@ -87,14 +87,14 @@ export default function Experience() {
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors duration-500">{exp.title}</h3>
+                  <h3 className="text-xl font-semibold text-secondary-900 dark:text-white transition-colors duration-500">{exp.title}</h3>
                   <p className="text-indigo-600 dark:text-indigo-300 font-medium transition-colors duration-500">{exp.subtitle}</p>
                 </div>
-                <span className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:mt-0 px-3 py-1 bg-white/10 dark:bg-navy-900/20 rounded-full transition-colors duration-500">
+                <span className="text-sm text-secondary-600 dark:text-gray-300 mt-2 md:mt-0 px-3 py-1 bg-white/10 dark:bg-navy-900/20 rounded-full transition-colors duration-500">
                   {exp.period}
                 </span>
               </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed transition-colors duration-500">{exp.description}</p>
+              <p className="text-secondary-700 dark:text-gray-200 leading-relaxed transition-colors duration-500">{exp.description}</p>
             </motion.div>
           </motion.div>
         ))}

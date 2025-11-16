@@ -55,19 +55,11 @@ export default function Navbar() {
           whileTap={{ scale: 0.95 }}
         >
           <Link href="#home" className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent hover:from-primary-700 hover:to-accent-700 transition-all duration-300">
-            Akshat.dev
+            Portfolio
           </Link>
         </motion.div>
 
         <nav className="hidden md:flex gap-8 items-center">
-          <button
-            aria-label="Toggle dark mode"
-            onClick={toggleTheme}
-            className="ml-4 px-3 py-2 rounded-lg font-bold text-sm bg-navy-900 dark:bg-white text-white dark:text-navy-900 border border-navy-800 dark:border-white transition-all duration-500 shadow-md"
-            style={{ minWidth: 40 }}
-          >
-            {theme === 'dark' ? '🌙' : '☀️'}
-          </button>
           {navItems.map((item) => (
             <motion.button
               key={item.id}
@@ -90,13 +82,21 @@ export default function Navbar() {
               )}
             </motion.button>
           ))}
+          <button
+            aria-label="Toggle dark mode"
+            onClick={toggleTheme}
+            className="ml-4 px-3 py-2 rounded-lg font-bold text-sm bg-secondary-900 dark:bg-white text-white dark:text-secondary-900 border border-secondary-800 dark:border-white transition-all duration-500 shadow-md"
+            style={{ minWidth: 40 }}
+          >
+            {theme === 'dark' ? '🌙' : '☀️'}
+          </button>
         </nav>
 
         <div className="md:hidden flex items-center gap-2">
           <button
             aria-label="Toggle dark mode"
             onClick={toggleTheme}
-            className="px-2 py-2 rounded-lg font-bold text-sm bg-navy-900 dark:bg-white text-white dark:text-navy-900 border border-navy-800 dark:border-white transition-all duration-500 shadow-md"
+            className="px-2 py-2 rounded-lg font-bold text-sm bg-secondary-900 dark:bg-white text-white dark:text-secondary-900 border border-secondary-800 dark:border-white transition-all duration-500 shadow-md"
             style={{ minWidth: 40 }}
           >
             {theme === 'dark' ? '🌙' : '☀️'}

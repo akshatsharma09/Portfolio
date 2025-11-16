@@ -11,13 +11,13 @@ export default function ProjectCard({ title, desc, tech, links }) {
       transition={{ duration: 0.5 }}
     >
       <motion.h3
-        className="text-2xl font-bold mb-4 text-slate-800 dark:text-white"
+        className="text-2xl font-bold mb-4 text-secondary-900 dark:text-white"
         whileHover={{ scale: 1.03 }}
       >
         {title}
       </motion.h3>
       <motion.p
-        className="text-gray-700 dark:text-gray-200 mb-6 text-lg leading-relaxed"
+        className="text-secondary-700 dark:text-gray-200 mb-6 text-lg leading-relaxed"
         whileHover={{ scale: 1.01 }}
       >
         {desc}

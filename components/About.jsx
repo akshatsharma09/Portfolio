@@ -24,19 +24,17 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-secondary-700 dark:text-navy-100 leading-relaxed mb-6 transition-colors duration-500"
+            className="text-lg text-secondary-700 dark:text-gray-200 leading-relaxed mb-6 transition-colors duration-500"
           >
-            I’m Akshat Sharma, a BTech student in Artificial Intelligence and Machine Learning.
-            Awarded 3rd position in the first semester and recognized by the college principal.
+            I’m Akshat Sharma, a B.Tech AI-ML student skilled in Python, machine learning, and cloud-based AI deployment. I’ve built projects like a 95%-accurate Sign Language Detection System using TensorFlow & Azure, and an OOP-based Flappy Bird game with PyGame.
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-secondary-700 dark:text-navy-100 leading-relaxed mb-8 transition-colors duration-500"
+            className="text-lg text-secondary-700 dark:text-gray-200 leading-relaxed mb-8 transition-colors duration-500"
           >
-            I’ve completed internships at Edunet Foundation (Azure AI Fundamentals) and built real-world projects
-            in cybersecurity and AI, combining my passion for technology with practical problem-solving.
+            I’ve interned at the Asian Institute of Technology (Bangkok) and Edunet Foundation, earned certifications in Python, Java, UI/UX, and Azure, and participated in SIH and Code for Bharat. I also secured 3rd position in my B.Tech first year and continue building scalable AI solutions.
           </motion.p>
 
           <motion.button
@@ -93,7 +91,7 @@ export default function About() {
               >
                 <div className="text-4xl mb-3">{interest.icon}</div>
                 <h4 className="font-semibold text-lg mb-2 text-secondary-800 dark:text-white transition-colors duration-500">{interest.title}</h4>
-                <p className="text-secondary-600 dark:text-navy-100 text-sm transition-colors duration-500">{interest.desc}</p>
+                <p className="text-secondary-600 dark:text-gray-200 text-sm transition-colors duration-500">{interest.desc}</p>
               </motion.div>
             ))}
           </div>
